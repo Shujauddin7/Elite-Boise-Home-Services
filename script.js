@@ -242,6 +242,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modal functionality
     function openModal(modal) {
       modal.style.display = 'flex';
+      if (window.innerWidth <= 768) {
+        const modalContent = modal.querySelector('.modal-content');
+        modalContent.style.maxHeight = '80vh';
+        modalContent.style.overflowY = 'auto';
+      }
     }
 
     function closeModal(modal) {

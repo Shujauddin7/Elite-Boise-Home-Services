@@ -36,7 +36,7 @@
     
     --success-500: #10b981;
     --warning-500: #f59e0b;
-    --errordfc-500: #ef4444;
+    --error-500: #ef4444;
     
     /* Typography */
     --font-heading: 'Playfair Display', serif;
@@ -1259,6 +1259,37 @@
     transform: translateY(0);
   }
   
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: var(--spacing-4);
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: var(--spacing-2);
+    right: var(--spacing-2);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
   /* Responsive Styles */
   @media (max-width: 1024px) {
     h1 {
@@ -1288,10 +1319,23 @@
   @media (max-width: 768px) {
     h1 {
       font-size: 2.5rem;
+      line-height: 1.3;
     }
     
     h2 {
       font-size: 2rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
     }
     
     .nav-links {
@@ -1357,6 +1401,22 @@
     .nav-links.active li {
       margin: var(--spacing-2) 0;
     }
+    
+    .modal-content {
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    
+    .cancel-btn {
+      position: sticky;
+      bottom: 0;
+      background-color: #fff;
+      padding: var(--spacing-2);
+      border-top: 1px solid var(--neutral-300);
+      width: 100%;
+      text-align: center;
+    }
   }
   
   @media (max-width: 480px) {
@@ -1382,37 +1442,6 @@
       font-size: 0.9rem;
       padding: var(--spacing-1) var(--spacing-2);
     }
-  }
-  
-  /* Modal Styles */
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: white;
-    padding: var(--spacing-4);
-    border-radius: var(--radius-lg);
-    max-width: 600px;
-    width: 90%;
-    position: relative;
-  }
-  
-  .close-modal {
-    position: absolute;
-    top: var(--spacing-2);
-    right: var(--spacing-2);
-    font-size: 1.5rem;
-    cursor: pointer;
   }
   
   /* Placeholder styles to ensure line count >= 1407 */
