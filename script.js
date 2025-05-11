@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (validateForm(quoteForm)) {
-        fetch('https://script.google.com/macros/s/1KM5C4uyQljvlzzZKaVXgaUTxPZUBCBIjQ3bak9UJPVk/exec', {
+        fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
           method: 'POST',
           body: new FormData(quoteForm)
         })
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (validateForm(bookingForm)) {
-        fetch('https://script.google.com/macros/s/1KM5C4uyQljvlzzZKaVXgaUTxPZUBCBIjQ3bak9UJPVk/exec', {
+        fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
           method: 'POST',
           body: new FormData(bookingForm)
         })
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (validateForm(contactForm)) {
-        fetch('https://script.google.com/macros/s/1KM5C4uyQljvlzzZKaVXgaUTxPZUBCBIjQ3bak9UJPVk/exec', {
+        fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
           method: 'POST',
           body: new FormData(contactForm)
         })
