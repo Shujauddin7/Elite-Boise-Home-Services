@@ -1281,15 +1281,17 @@ section {
   background-color: white;
   padding: var(--spacing-4);
   border-radius: var(--radius-lg);
-  max-width: 600px;
+  max-width: 800px;
   width: 90%;
   position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .close-modal {
-  position: absolute;
-  top: var(--spacing-2);
-  right: var(--spacing-2);
+  position: sticky;
+  float: right;
+  top: 0;
   font-size: 1.5rem;
   cursor: pointer;
   background-color: var(--primary-600);
@@ -1304,11 +1306,38 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border: 2px solid white;
   transition: all 0.3s ease;
+  margin-bottom: var(--spacing-2);
 }
 
 .close-modal:hover {
   background-color: var(--secondary-500);
   transform: scale(1.1);
+}
+
+#gallery-modal .modal-content {
+  max-width: 1000px;
+  padding: var(--spacing-4);
+}
+
+#gallery-modal .full-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+#gallery-modal h2 {
+  text-align: center;
+  margin-top: var(--spacing-2);
+}
+
+#gallery-modal .gallery-item {
+  margin-bottom: var(--spacing-3);
+}
+
+#gallery-modal .close-modal {
+  background-color: var(--secondary-500);
+  color: var(--primary-900);
+  z-index: 2000;
 }
 
 .cancel-btn {
@@ -1323,20 +1352,8 @@ section {
   z-index: 1005;
 }
 
-#gallery-modal .close-modal {
-  top: 15px;
-  right: 15px;
-  width: 45px;
-  height: 45px;
-  font-size: 1.8rem;
-  background-color: var(--secondary-500);
-  color: var(--primary-900);
-  z-index: 2000;
-}
-
 #gallery-modal .cancel-btn {
   display: block;
-  margin-top: var(--spacing-4);
   background-color: var(--primary-600);
   color: white;
 }

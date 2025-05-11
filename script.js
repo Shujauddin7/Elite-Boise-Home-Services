@@ -190,6 +190,13 @@ document.addEventListener('DOMContentLoaded', () => {
     form.querySelectorAll('.form-group').forEach(group => {
       const input = group.querySelector('input, select, textarea');
       if (!input) return;
+      
+      // Skip validation for project details in quote form
+      if (form.id === 'quote-form' && input.id === 'quote-message') {
+        group.classList.remove('error');
+        group.classList.add('success');
+        return;
+      }
 
       group.classList.remove('error', 'success');
 
@@ -200,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           group.classList.add('success');
         }
-      } else if (!input.value.trim()) {
+      } else if (!input.value.trim() && input.hasAttribute('required')) {
         group.classList.add('error');
         isValid = false;
       } else {
@@ -343,19 +350,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = galleryModal.querySelector('.close-modal');
     if (closeBtn) {
       closeBtn.style.display = 'flex';
-      closeBtn.style.position = 'absolute';
+      closeBtn.style.position = 'sticky';
       closeBtn.style.top = '10px';
-      closeBtn.style.right = '10px';
-      closeBtn.style.zIndex = '1500';
+      closeBtn.style.float = 'right';
+      closeBtn.style.marginBottom = '10px';
+      closeBtn.style.zIndex = '2000';
       closeBtn.style.backgroundColor = 'var(--primary-600)';
       closeBtn.style.color = 'white';
-      closeBtn.style.width = '40px';
-      closeBtn.style.height = '40px';
+      closeBtn.style.width = '45px';
+      closeBtn.style.height = '45px';
       closeBtn.style.cursor = 'pointer';
       closeBtn.style.borderRadius = '50%';
-      closeBtn.style.display = 'flex';
       closeBtn.style.alignItems = 'center';
       closeBtn.style.justifyContent = 'center';
+    }
+    
+    // Ensure modal content is scrollable
+    const modalContent = galleryModal.querySelector('.modal-content');
+    if (modalContent) {
+      modalContent.style.maxHeight = '80vh';
+      modalContent.style.overflowY = 'auto';
     }
   });
 
@@ -379,6 +393,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize first testimonial
   showTestimonial(currentTestimonial);
+
+  // Add event listener for the Request a Consultation button in the hero section
+  const consultationBtn = document.querySelector('.consultation-btn');
+  if (consultationBtn) {
+    consultationBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(quoteModal);
+    });
+  }
 
   // Placeholder functions to meet line count
   function placeholderFunctionOne() {

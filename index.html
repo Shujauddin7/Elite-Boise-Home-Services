@@ -42,7 +42,7 @@
         <h1>Elite Home Solutions for Boise's Finest Homes</h1>
         <p>Where premium craftsmanship meets trusted plumbing, HVAC, and roofing services — all under one name.</p>
         <div class="hero-buttons">
-          <a href="#booking" class="btn btn-primary">Request a Consultation</a>
+          <a href="#" class="btn btn-primary consultation-btn">Request a Consultation</a>
           <a href="#services" class="btn btn-secondary">View Our Premium Services</a>
         </div>
       </div>
@@ -202,7 +202,7 @@
         <div class="gallery-item fade-in" data-type="Bathrooms">
           <div class="before-after-frame">
             <div class="before-image">
-              <img src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Bathroom Before">
+              <img src="https://images.pexels.com/photos/6444256/pexels-photo-6444256.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Bathroom Before">
             </div>
             <div class="after-image">
               <img src="https://images.pexels.com/photos/3288100/pexels-photo-3288100.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Bathroom After">
@@ -216,10 +216,10 @@
         <div class="gallery-item fade-in" data-type="Kitchens">
           <div class="before-after-frame">
             <div class="before-image">
-              <img src="https://images.pexels.com/photos/534172/pexels-photo-534172.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Kitchen Before">
+              <img src="https://images.pexels.com/photos/5668481/pexels-photo-5668481.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Kitchen Before">
             </div>
             <div class="after-image">
-              <img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Kitchen After">
+              <img src="https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Kitchen After">
             </div>
           </div>
           <div class="gallery-overlay">
@@ -230,7 +230,7 @@
         <div class="gallery-item fade-in" data-type="Outdoor">
           <div class="before-after-frame">
             <div class="before-image">
-              <img src="https://images.pexels.com/photos/5998053/pexels-photo-5998053.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Outdoor Before">
+              <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Outdoor Before">
             </div>
             <div class="after-image">
               <img src="https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Outdoor After">
@@ -270,6 +270,48 @@
           <div class="gallery-overlay">
             <h4>Outdoor Renovation</h4>
             <p>Resort-style pool upgrade</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Bathrooms">
+          <img src="https://images.pexels.com/photos/6585756/pexels-photo-6585756.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Luxury Bathroom">
+          <div class="gallery-overlay">
+            <h4>Luxury Bathroom</h4>
+            <p>Modern freestanding tub installation</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Bathrooms">
+          <img src="https://images.pexels.com/photos/7746193/pexels-photo-7746193.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Modern Shower">
+          <div class="gallery-overlay">
+            <h4>Modern Shower Design</h4>
+            <p>Seamless glass shower installation</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Kitchens">
+          <img src="https://images.pexels.com/photos/7005432/pexels-photo-7005432.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Kitchen Sink">
+          <div class="gallery-overlay">
+            <h4>Designer Kitchen Sink</h4>
+            <p>Premium fixture installation</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Kitchens">
+          <img src="https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Modern Kitchen">
+          <div class="gallery-overlay">
+            <h4>Complete Kitchen Remodel</h4>
+            <p>Modern plumbing and fixtures</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Outdoor">
+          <img src="https://images.pexels.com/photos/6969864/pexels-photo-6969864.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Outdoor Shower">
+          <div class="gallery-overlay">
+            <h4>Outdoor Shower</h4>
+            <p>Custom backyard installation</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-type="Outdoor">
+          <img src="https://images.pexels.com/photos/7535073/pexels-photo-7535073.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Garden Irrigation">
+          <div class="gallery-overlay">
+            <h4>Smart Irrigation System</h4>
+            <p>Water-efficient garden solution</p>
           </div>
         </div>
       </div>
@@ -373,12 +415,13 @@
             <option value="Water Filtration Systems">Water Filtration Systems</option>
             <option value="Smart Home Plumbing">Smart Home Plumbing</option>
             <option value="Outdoor Ohm & Pool Plumbing">Outdoor Ohm & Pool Plumbing</option>
+            <option value="Other">Other Service</option>
           </select>
           <span class="error-message">Please select a service</span>
         </div>
         <div class="form-group">
           <label for="quote-message">Project Details</label>
-          <textarea id="quote-message" name="message" placeholder="Tell us about your project needs..." required></textarea>
+          <textarea id="quote-message" name="message" placeholder="Tell us about your project needs..."></textarea>
           <span class="error-message">Please provide project details</span>
         </div>
         <button type="submit" class="btn btn-primary">Submit Quote Request</button>
