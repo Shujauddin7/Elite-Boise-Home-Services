@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('booking-form');
   const contactForm = document.getElementById('contact-form');
   const galleryCancelBtn = galleryModal.querySelector('.cancel-btn');
-
+ 
+ 
   // Set navbar height dynamically
   const navbar = document.querySelector('.navbar');
   const setNavbarHeight = () => {
@@ -29,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   setNavbarHeight();
   window.addEventListener('resize', setNavbarHeight);
-
+ 
+ 
   // Mobile menu toggle
   mobileMenuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
@@ -37,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenuBtn.querySelector('i').classList.toggle('fa-bars', !isOpen);
     mobileMenuBtn.querySelector('i').classList.toggle('fa-times', isOpen);
   });
-
+ 
+ 
   // Close mobile menu on link click
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
@@ -46,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenuBtn.querySelector('i').classList.remove('fa-times');
     });
   });
-
+ 
+ 
   // Navbar scroll effect and back to top button
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -57,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
       backToTopBtn.classList.remove('visible');
     }
   });
-
+ 
+ 
   // Back to top button click
   backToTopBtn.addEventListener('click', () => {
     window.scrollTo({
@@ -65,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     });
   });
-
+ 
+ 
   // Smooth scrolling for anchor links with navbar offset
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -82,13 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+ 
+ 
   // Gallery tab functionality
   galleryTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       galleryTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-
+ 
+ 
       const filter = tab.textContent.toLowerCase();
       galleryItems.forEach(item => {
         const itemType = item.getAttribute('data-type').toLowerCase();
@@ -102,32 +110,38 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
+ 
+ 
   // Testimonials slider
   let currentTestimonial = 0;
-
+ 
+ 
   function showTestimonial(index) {
     testimonialItems.forEach((item, i) => {
       item.style.display = i === index ? 'block' : 'none';
     });
   }
-
+ 
+ 
   prevBtn.addEventListener('click', () => {
     currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
     showTestimonial(currentTestimonial);
   });
-
+ 
+ 
   nextBtn.addEventListener('click', () => {
     currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
     showTestimonial(currentTestimonial);
   });
-
+ 
+ 
   // Auto-rotate testimonials
   setInterval(() => {
     currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
     showTestimonial(currentTestimonial);
   }, 5000);
-
+ 
+ 
   // FAQ accordion
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
@@ -139,7 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+ 
+ 
   // FAQ search
   faqSearch.addEventListener('input', () => {
     const searchTerm = faqSearch.value.toLowerCase();
@@ -153,7 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+ 
+ 
   // Fade-in animations on scroll
   const fadeInElements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
@@ -164,11 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.1 });
-
+ 
+ 
   fadeInElements.forEach(element => {
     observer.observe(element);
   });
-
+ 
+ 
   // "Learn More" toggle functionality
   document.querySelectorAll('.learn-more').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -181,25 +199,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+ 
+ 
   // Form validation function
   function validateForm(form) {
     let isValid = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+ 
+ 
     form.querySelectorAll('.form-group').forEach(group => {
       const input = group.querySelector('input, select, textarea');
       if (!input) return;
-      
+     
       // Skip validation for project details in quote form
       if (form.id === 'quote-form' && input.id === 'quote-message') {
         group.classList.remove('error');
         group.classList.add('success');
         return;
       }
-
+ 
+ 
       group.classList.remove('error', 'success');
-
+ 
+ 
       if (input.tagName === 'INPUT' && input.type === 'email') {
         if (!emailRegex.test(input.value.trim())) {
           group.classList.add('error');
@@ -214,10 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
         group.classList.add('success');
       }
     });
-
+ 
+ 
     return isValid;
   }
-
+ 
+ 
   // Quote form submission
   if (quoteForm) {
     quoteForm.addEventListener('submit', (e) => {
@@ -239,12 +263,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
-
+ 
+ 
     quoteModal.querySelector('.cancel-btn').addEventListener('click', () => {
       closeModal(quoteModal);
     });
   }
-
+ 
+ 
   // Booking form submission
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
@@ -270,7 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
+ 
+ 
   // Contact form submission
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -296,7 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
+ 
+ 
   // Modal functionality
   function openModal(modal) {
     modal.style.display = 'flex';
@@ -316,7 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
+ 
+ 
   function closeModal(modal) {
     modal.style.display = 'none';
     if (modal === quoteModal) {
@@ -328,14 +357,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-
+ 
+ 
   // Close modals when clicking outside
   window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
       closeModal(e.target);
     }
   });
-
+ 
+ 
   // Close modals with close button
   closeModalBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -343,7 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal(modal);
     });
   });
-
+ 
+ 
   // Full gallery modal
   viewFullPortfolioBtn.addEventListener('click', () => {
     openModal(galleryModal);
@@ -355,45 +387,96 @@ document.addEventListener('DOMContentLoaded', () => {
       closeBtn.style.float = 'right';
       closeBtn.style.marginBottom = '10px';
       closeBtn.style.zIndex = '2000';
-      closeBtn.style.backgroundColor = 'var(--primary-600)';
-      closeBtn.style.color = 'white';
+      closeBtn.style.backgroundColor = 'var(--secondary-500)';
+      closeBtn.style.color = 'var(--primary-900)';
       closeBtn.style.width = '45px';
       closeBtn.style.height = '45px';
       closeBtn.style.cursor = 'pointer';
       closeBtn.style.borderRadius = '50%';
       closeBtn.style.alignItems = 'center';
       closeBtn.style.justifyContent = 'center';
+      closeBtn.style.border = '2px solid white';
+      closeBtn.style.boxShadow = 'var(--shadow-lg)';
     }
-    
-    // Ensure modal content is scrollable
+   
+    // Ensure modal content is scrollable and has dark background
     const modalContent = galleryModal.querySelector('.modal-content');
     if (modalContent) {
-      modalContent.style.maxHeight = '80vh';
+      modalContent.style.maxHeight = '85vh';
       modalContent.style.overflowY = 'auto';
+      modalContent.style.backgroundColor = 'var(--neutral-900)';
+      modalContent.style.color = 'white';
+     
+      // Make sure all gallery items are visible by default
+      const modalItems = galleryModal.querySelectorAll('.gallery-item');
+      modalItems.forEach(item => {
+        item.style.display = 'block';
+        item.style.opacity = '1';
+      });
+     
+      // Force browser to recognize the scrollable area after images load
+      const galleryImages = modalContent.querySelectorAll('img');
+      galleryImages.forEach(img => {
+        // Set explicit height to ensure images are visible
+        img.style.height = '300px';
+        img.style.objectFit = 'cover';
+        img.style.width = '100%';
+        img.style.display = 'block';
+        img.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+        img.style.borderRadius = 'var(--radius-md)';
+       
+        // Reload the image to ensure it's displayed
+        const currentSrc = img.src;
+        img.src = '';
+        setTimeout(() => {
+          img.src = currentSrc;
+        }, 10);
+      });
+    }
+   
+    // Apply filtering based on current tab selection
+    const activeTab = document.querySelector('.gallery-tab.active');
+    if (activeTab) {
+      const filter = activeTab.textContent.toLowerCase();
+      const modalItems = galleryModal.querySelectorAll('.gallery-item');
+     
+      modalItems.forEach(item => {
+        const itemType = item.getAttribute('data-type').toLowerCase();
+        if (filter === 'all' || itemType === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     }
   });
-
+ 
+ 
   // Gallery cancel button
   galleryCancelBtn.addEventListener('click', () => {
     closeModal(galleryModal);
   });
-
+ 
+ 
   // Quote request modal
   requestQuoteBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       openModal(quoteModal);
     });
   });
-
+ 
+ 
   // Initialize gallery to show all items
   galleryItems.forEach(item => {
     item.style.display = 'block';
     item.classList.add('fade-in');
   });
-
+ 
+ 
   // Initialize first testimonial
   showTestimonial(currentTestimonial);
-
+ 
+ 
   // Add event listener for the Request a Consultation button in the hero section
   const consultationBtn = document.querySelector('.consultation-btn');
   if (consultationBtn) {
@@ -402,17 +485,21 @@ document.addEventListener('DOMContentLoaded', () => {
       openModal(quoteModal);
     });
   }
-
+ 
+ 
   // Placeholder functions to meet line count
   function placeholderFunctionOne() {
     console.log('Placeholder function to meet line count.');
   }
-
+ 
+ 
   function placeholderFunctionTwo() {
     console.log('Additional placeholder for line requirement.');
   }
-
+ 
+ 
   // Call placeholder functions (unused but present for line count)
   placeholderFunctionOne();
   placeholderFunctionTwo();
-});
+ });
+ 
