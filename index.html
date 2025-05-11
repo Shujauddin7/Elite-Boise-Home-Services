@@ -26,9 +26,9 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="tel:+10070070007" class="nav-phone">
-        <i class="fas fa-phone"></i>
-        (007) 007-0007
+      <a href="https://boise-homeservice-landing-page.netlify.app/" class="nav-phone" target="_blank">
+        <i class="fas fa-compass"></i>
+        Explore
       </a>
       <button class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
@@ -39,7 +39,7 @@
   <section id="hero" class="hero" style="background-image: url('https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&cs=tinysrgb&w=1600')">
     <div class="container">
       <div class="hero-content">
-        <h1>Elite Home Solutions for Boise’s Finest Homes</h1>
+        <h1>Elite Home Solutions for Boise's Finest Homes</h1>
         <p>Where premium craftsmanship meets trusted plumbing, HVAC, and roofing services — all under one name.</p>
         <div class="hero-buttons">
           <a href="#booking" class="btn btn-primary">Request a Consultation</a>
@@ -56,9 +56,9 @@
       <div class="about-container">
         <div class="about-content">
           <p>At Elite Boise HomeServices, we believe your home deserves more than just repairs—it deserves care that elevates comfort and style.
-            For over 25 years, we’ve helped Boise homeowners with expert plumbing, HVAC, and home upgrades—delivered with unmatched craftsmanship and care.
+            For over 25 years, we've helped Boise homeowners with expert plumbing, HVAC, and home upgrades—delivered with unmatched craftsmanship and care.
             </p>
-          <p>Whether it’s a luxury bathroom remodel, efficient climate system, or smart-home plumbing, we bring passion, precision, and pride to every project.
+          <p>Whether it's a luxury bathroom remodel, efficient climate system, or smart-home plumbing, we bring passion, precision, and pride to every project.
           </p>
           <div class="about-features">
             <div class="feature-item">
@@ -285,7 +285,7 @@
         <div class="pricing-card fade-in">
           <div class="pricing-header">
             <h3 class="pricing-name">Essential</h3>
-            <div class="pricing-price">Starting at $150</div>
+            <div class="pricing-price">Starting at $xxx</div>
             <div class="pricing-description">Quality solutions for basic plumbing needs</div>
           </div>
           <div class="pricing-features">
@@ -303,7 +303,7 @@
           <div class="popular-tag">Most Popular</div>
           <div class="pricing-header">
             <h3 class="pricing-name">Premium</h3>
-            <div class="pricing-price">Starting at $250</div>
+            <div class="pricing-price">Starting at $xxx</div>
             <div class="pricing-description">Enhanced solutions for discerning homeowners</div>
           </div>
           <div class="pricing-features">
@@ -321,7 +321,7 @@
         <div class="pricing-card fade-in">
           <div class="pricing-header">
             <h3 class="pricing-name">Platinum</h3>
-            <div class="pricing-price">Starting at $350</div>
+            <div class="pricing-price">Starting at $xxx</div>
             <div class="pricing-description">Ultimate luxury plumbing experience</div>
           </div>
           <div class="pricing-features">
@@ -347,24 +347,25 @@
       <h2>Request a Quote</h2>
       <p class="section-subtitle">Get a Personalized Quote for Your Project</p>
       <form id="quote-form" class="quote-form">
+        <input type="hidden" name="formType" value="quote">
         <div class="form-group">
           <label for="quote-name">Your Name</label>
-          <input type="text" id="quote-name" placeholder="John Smith" required>
+          <input type="text" id="quote-name" name="name" placeholder="John Smith" required>
           <span class="error-message">Please enter your name</span>
         </div>
         <div class="form-group">
           <label for="quote-email">Email Address</label>
-          <input type="email" id="quote-email" placeholder="your@email.com" required>
+          <input type="email" id="quote-email" name="email" placeholder="your@email.com" required>
           <span class="error-message">Please enter a valid email</span>
         </div>
         <div class="form-group">
           <label for="quote-phone">Phone Number</label>
-          <input type="tel" id="quote-phone" placeholder="(007) 007-0007" required>
+          <input type="tel" id="quote-phone" name="phone" placeholder="(xxx) 007-0007" required>
           <span class="error-message">Please enter your phone number</span>
         </div>
         <div class="form-group">
           <label for="quote-service">Service Type</label>
-          <select id="quote-service" required>
+          <select id="quote-service" name="service" required>
             <option value="">Select a Service</option>
             <option value="Premium Plumbing">Premium Plumbing</option>
             <option value="Custom Bathroom Design">Custom Bathroom Design</option>
@@ -377,7 +378,7 @@
         </div>
         <div class="form-group">
           <label for="quote-message">Project Details</label>
-          <textarea id="quote-message" placeholder="Tell us about your project needs..." required></textarea>
+          <textarea id="quote-message" name="message" placeholder="Tell us about your project needs..." required></textarea>
           <span class="error-message">Please provide project details</span>
         </div>
         <button type="submit" class="btn btn-primary">Submit Quote Request</button>
@@ -479,7 +480,7 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            A typical luxury bathroom renovation takes 4-8 weeks, depending on the complexity and customization required. We’ll provide a timeline during your consultation.
+            A typical luxury bathroom renovation takes 4-8 weeks, depending on the complexity and customization required. We'll provide a timeline during your consultation.
           </div>
         </div>
         <div class="faq-item fade-in">
@@ -497,7 +498,7 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            If your water tastes off, has visible particles, or you’re concerned about contaminants, a filtration system might be right for you. We can test your water during a consultation.
+            If your water tastes off, has visible particles, or you're concerned about contaminants, a filtration system might be right for you. We can test your water during a consultation.
           </div>
         </div>
         <div class="faq-item fade-in">
@@ -506,7 +507,7 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            Turn off your main water valve and call us immediately at (007) 007-0007 for emergency service.
+            Turn off your main water valve and call us immediately at (xxx) 007-0007 for emergency service.
           </div>
         </div>
         <div class="faq-item fade-in">
@@ -549,20 +550,26 @@
         </div>
         <div class="booking-form fade-in">
           <h3>Book Your Appointment</h3>
-          <form id="booking-form">
+          <form id="booking-form" class="booking-form">
+            <input type="hidden" name="formType" value="booking">
             <div class="form-group">
               <label for="booking-name">Your Name</label>
-              <input type="text" id="booking-name" placeholder="John Smith" required>
+              <input type="text" id="booking-name" name="name" placeholder="John Smith" required>
               <span class="error-message">Please enter your name</span>
             </div>
             <div class="form-group">
+              <label for="booking-email">Email Address</label>
+              <input type="email" id="booking-email" name="email" placeholder="your@email.com" required>
+              <span class="error-message">Please enter a valid email</span>
+            </div>
+            <div class="form-group">
               <label for="booking-phone">Phone Number</label>
-              <input type="tel" id="booking-phone" placeholder="(007) 007-0007" required>
+              <input type="tel" id="booking-phone" name="phone" placeholder="(xxx) 007-0007" required>
               <span class="error-message">Please enter your phone number</span>
             </div>
             <div class="form-group">
-              <label for="booking-service">Service Interest</label>
-              <select id="booking-service" required>
+              <label for="booking-service">Service Type</label>
+              <select id="booking-service" name="service" required>
                 <option value="">Select a Service</option>
                 <option value="Premium Plumbing">Premium Plumbing</option>
                 <option value="Custom Bathroom Design">Custom Bathroom Design</option>
@@ -590,7 +597,7 @@
             </div>
             <div class="form-group">
               <label for="booking-message">Tell Us About Your Project</label>
-              <textarea id="booking-message" placeholder="Please share any details about your project or specific requirements..." required></textarea>
+              <textarea id="booking-message" name="message" placeholder="Please share any details about your project or specific requirements..." required></textarea>
               <span class="error-message">Please provide project details</span>
             </div>
             <button type="submit" class="btn btn-primary booking-btn">Book Consultation</button>
@@ -621,7 +628,7 @@
             </div>
             <div class="contact-text">
               <h4>Phone Number</h4>
-              <p>(007) 007-0007</p>
+              <p>(xxx) 007-0007</p>
             </div>
           </div>
           <div class="contact-item">
@@ -635,31 +642,27 @@
           </div>
         </div>
         <div class="contact-form fade-in">
-          <form id="contact-form">
+          <form id="contact-form" class="contact-form">
+            <input type="hidden" name="formType" value="contact">
             <div class="form-group">
               <label for="contact-name">Your Name</label>
-              <input type="text" id="contact-name" placeholder="John Smith" required>
+              <input type="text" id="contact-name" name="name" placeholder="John Smith" required>
               <span class="error-message">Please enter your name</span>
             </div>
             <div class="form-group">
               <label for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" placeholder="your@email.com" required>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
               <span class="error-message">Please enter a valid email</span>
             </div>
             <div class="form-group">
               <label for="contact-phone">Phone Number</label>
-              <input type="tel" id="contact-phone" placeholder="(007) 007-0007" required>
+              <input type="tel" id="contact-phone" name="phone" placeholder="(xxx) 007-0007" required>
               <span class="error-message">Please enter your phone number</span>
             </div>
             <div class="form-group">
-              <label for="contact-subject">Subject</label>
-              <input type="text" id="contact-subject" placeholder="How can we help you?" required>
-              <span class="error-message">Please enter a subject</span>
-            </div>
-            <div class="form-group">
-              <label for="contact-message">Your Message</label>
-              <textarea id="contact-message" placeholder="Please provide details about your inquiry..." required></textarea>
-              <span class="error-message">Please provide your message</span>
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="How can we help you?" required></textarea>
+              <span class="error-message">Please enter your message</span>
             </div>
             <button type="submit" class="btn btn-primary booking-btn">Send Message</button>
           </form>
@@ -701,7 +704,7 @@
           <li>
             <div class="footer-contact-item">
               <span class="footer-contact-icon"><i class="fas fa-phone-alt"></i></span>
-              <span>(007) 007-0007</span>
+              <span>(xxx) 007-0007</span>
             </div>
           </li>
         </ul>
@@ -718,6 +721,9 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <script src="script.js"></script>
+</body>
+</html>
   <script src="script.js"></script>
 </body>
 </html>
